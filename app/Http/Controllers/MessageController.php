@@ -8,15 +8,16 @@ use App\Models\Message;
 
 class MessageController extends Controller
 {
-        public function index()
+    public function index()
     {
         $messages = Message::all();
-        return view('contact.show', compact('messages'));
+        return view('contact.index', compact('messages'));
     }
 
-        public function show($id)
+    public function show($id)
     {
         $message = Message::findOrFail($id);
         return view('contact.show', compact('message'));
     }
 }
+

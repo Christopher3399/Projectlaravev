@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container d-flex align-items-center">
         <a class="navbar-brand" href="{{ url('/') }}">
-            Nouvelles Saveur
+            Nouvelles Saveurs
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

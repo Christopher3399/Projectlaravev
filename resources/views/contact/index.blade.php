@@ -4,8 +4,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Message </h1>
+        <h1>Messages</h1>
 
+        @foreach($messages as $message)
             <div class="mb-3">
                 <strong>Name:</strong> {{ $message->name }}
             </div>
@@ -18,6 +19,7 @@
                 <strong>Message:</strong> {{ $message->message }}
             </div>
             <hr>
+            @endforeach
 
     </div>
 @endsection
