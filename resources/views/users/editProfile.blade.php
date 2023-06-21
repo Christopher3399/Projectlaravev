@@ -55,6 +55,20 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="about_me" class="col-md-4 col-form-label text-md-right">{{ __('About Me') }}</label>
+
+                                <div class="col-md-6">
+                                    <textarea id="about_me" class="form-control @error('about_me') is-invalid @enderror" name="about_me" rows="4">{{ $user->about_me }}</textarea>
+
+                                    @error('about_me')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="profile_image" class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
 
                                 <div class="col-md-6">

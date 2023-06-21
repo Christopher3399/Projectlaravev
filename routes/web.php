@@ -74,4 +74,7 @@ Route::get('/message/{id}', [MessageController::class, 'show'])->name('message.s
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/message', [MessageController::class, 'index'])->name('message');
-// Chri
+
+
+
+Route::get('/about', function () {return view('about');})->name('about');

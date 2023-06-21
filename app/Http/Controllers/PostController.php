@@ -86,7 +86,7 @@ class PostController extends Controller
 
 
     public function destroy($id){
-        if(auth::user()->is_admin){
+        if(!Auth::user()->is_admin){
             abort(403, 'Only admins can delete posts');
         }
 
@@ -94,6 +94,6 @@ class PostController extends Controller
         $likes = Like::where('post_id', '=',  $post->id)->delete();
         $post->delete();
 
-        return redirect()->route('index')-with('statut', 'Post deleted');
+        return redirect()->route('index')->with('statut', 'Post deleted');
     }
 }

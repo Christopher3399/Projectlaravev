@@ -40,19 +40,20 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        // Validez les données du formulaire de mise à jour du profil
+        // Valider les données du formulaire de mise à jour du profil
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'birthday' => ['required', 'date'],
-            // Ajoutez d'autres règles de validation si nécessaire
+            'about_me' => ['nullable', 'string'],
+
         ]);
 
-        // Mettez à jour les champs du profil de l'utilisateur
+        // Mettre à jour les champs du profil de l'utilisateur
         $user->name = $validatedData['name'];
         $user->email = $validatedData['email'];
         $user->birthday = $validatedData['birthday'];
-        // Mettez à jour d'autres champs si nécessaire
+        $user->about_me = $validatedData['about_me']; // Mettre à jour le champ "about_me" si présent
 
         $user->save();
 

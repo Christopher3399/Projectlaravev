@@ -16,6 +16,7 @@
 
                         @foreach ($posts as $post)
                             <h3><a href="{{route('posts.show', $post->id)}}">{{ $post->title }}</a></h3>
+                            {{ $post->message }} <br>
                             <small>gepost door <a href="{{ route('profile', $post->user->name ) }}">{{ $post->user->name }} </a>op
                                 {{ $post->created_at->format('d/m/y \o\m H:i') }}</small>
                             @Auth

@@ -30,7 +30,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('faq.index') }}" style="color: black">FAQ</a>
                 </li>
-                @auth 
+                @auth
                     @if (Auth::check() && Auth::user()->is_admin)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('faq.create') }}" style="color: black">New FAQ</a>
@@ -41,16 +41,21 @@
                     @endif
                 @endauth
                 @guest
-                <li class="nav-item">
-                    <a href="{{ route('contact') }}" class="nav-link" style="color: black">Contact</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="{{ route('contact') }}" class="nav-link" style="color: black">Contact</a>
+                    </li>
+
                 @endguest
-                
+
                 <li class="nav-item">
                     @if (Auth::check() && Auth::user()->is_admin)
                         <a href="{{ route('message') }}" class="nav-link" style="color: black">Message</a>
                     @endif
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about') }}" style="color: black">About</a>
+                </li>
+
 
                 <!-- Authentication Links -->
                 @guest
